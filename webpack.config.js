@@ -6,7 +6,7 @@ const copyPlugin = require("copy-webpack-plugin");
 module.exports = {
     mode: 'development',
     entry: {
-      memes: './src/js/memes.js',
+      general: './src/js/general.js',
     },
     output: {
       path: path.resolve(__dirname, "dist"),
@@ -51,7 +51,7 @@ module.exports = {
     plugins: [
       new htmlWebpackPlugin({
         template: path.resolve(__dirname, "./src/index.html"),
-        chunks: ["memes"],
+        chunks: ["general"],
         inject: "body",
         filename: "index.html",
       }),
