@@ -12,21 +12,21 @@
     <div class="floater content">
         <form id="form">
             <div class="floater-top">
-                <input type="text" class="form-control" placeholder="Enter the word you want defined." required>
+                <input id="word" type="text" class="form-control" placeholder="Enter the word you want defined." required>
             </div>
             <div class="floater-bottom">
                 <button id="addButton" type="submit" class="btn btn-primary btn-sm">Add</button>
             </div>
         </form>
     </div>
-
+    
     <div class="content">
-        <div class="container p-5">
-            <div class="row pt-4 mx-auto" style="width: 500px;">
+        <div class="container p-5" id="definition">
+            <!-- <div class="row pt-4 mx-auto" style="width: 500px;">
                 <div class="col-sm-3 border border-2 border-dark" style="height: 110px;">
                     <img src="./images/Example.png" class="img-fluid p-2">
                 </div>
-                <!--This is empty to make the next column look better on the book image -->
+                This is empty to make the next column look better on the book image 
                 <div class="col-sm-3 border border-2 border-start-0 border-end-0 border-dark"></div>
                 <div class="col-sm-6 border border-2 border-start-0 border-dark d-flex align-items-center"
                     style="height: 110px;">
@@ -40,7 +40,7 @@
                     <span class="word2">Example Sentence:</span>
                     <p class="d-flex align-items-center">His fame is rooted in his extraordinary ability to hit
                         baseballs where fielders could not catch them.</p>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
@@ -49,6 +49,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="styles.css">
+    <script src="dist/general.bundle.js"></script>
 </body>
 
 </html>
