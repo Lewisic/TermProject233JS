@@ -3,6 +3,8 @@ const path = require('path');
 const htmlWebpackPlugin = require("html-webpack-plugin");
 const copyPlugin = require("copy-webpack-plugin");
 
+require('dotenv').config();
+
 module.exports = {
     mode: 'development',
     entry: {

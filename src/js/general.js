@@ -1,8 +1,8 @@
+import apiCall from './apiCall';
 const Owlbot = require('owlbot-js');
 const token = '34c41aabe34a273f226d13afde510740491536b3';
 
-class Definition
-{
+class Definition {
     constructor() {
         this.client = Owlbot(token);
         if (!localStorage["DEFINITION"]) {
@@ -20,7 +20,7 @@ class Definition
         document.getElementById("form").onsubmit = this.addDictionary.bind(this);
     }
 
-    generateDefinitionHtml(dictionary){
+    generateDefinitionHtml(dictionary) {
         return `
         <div class="row pt-4 mx-auto" style="width: 500px;">
                 <div class="col-sm-3 border border-2 border-dark" style="height: 110px;">
@@ -56,24 +56,25 @@ class Definition
 
     addDictionary(event) {
         event.preventDefault();
-        const defineWord = document.getElementById("word").value;
-        this.client.define()
+        let defineWord = document.getElementById("word").value;
+        //this.client.define()
+        apiCall(defineWord)
             .then(response => response.json())
             .then(data => {
                 const dictionary = {
-                    word: defineWord,
-                    image: data.definitions.image_url,
-                    definition: data.definitions.definition,
-                    sentence: data.definitions.example
+                    word: data.word,
+                    image: data.image,
+                    definition: data.definition,
+                    sentence: data.sentence
                 };
                 this.resetDictionary();
                 this.fillDictionary(dictionary);
             })
             .catch(error => {
                 console.log('There was a problem getting info!');
-            }); 
+            });
     }
 }
 
 let dictionary;
-window.onload = () => {dictionary = new Definition}
+window.onload = () => { dictionary = new Definition }
