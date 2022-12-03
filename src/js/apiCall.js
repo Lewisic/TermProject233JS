@@ -19,7 +19,7 @@ export default function apiCall(route, body = {}, method = 'GET') {
                 throw Error(response.statusText);
             }
         }
-        fetch(`${SERVER_URL}/${route}`, requestDetails)
+        fetch(`http://localhost:3000/${route}`, requestDetails)
             .then(handleErrors)
             .then(resolve)
             .catch(reject);
